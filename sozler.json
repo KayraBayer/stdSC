@@ -1,0 +1,502 @@
+[
+  {
+    "author": "Euclid",
+    "quote": "Geometriye giden kraliyet yolu yoktur.",
+    "source": "Proklos’un aktarımı — Euclid"
+  },
+  {
+    "author": "Archimedes",
+    "quote": "Evreka!",
+    "source": "Vitruvius, De Architectura — Archimedes"
+  },
+  {
+    "author": "Carl Friedrich Gauss",
+    "quote": "Matematik, bilimlerin kraliçesidir.",
+    "source": "Gauss’a atıf — Wikiquote"
+  },
+  {
+    "author": "David Hilbert",
+    "quote": "Bilmek zorundayız — bileceğiz.",
+    "source": "“Wir müssen wissen — wir werden wissen.” — Hilbert"
+  },
+  {
+    "author": "Emmy Noether",
+    "quote": "Simetri, doğa yasalarının kalbidir.",
+    "source": "Noether Teoremi — Wikiquote"
+  },
+  {
+    "author": "Henri Poincaré",
+    "quote": "Mantıkla kanıtlarız, sezgiyle keşfederiz.",
+    "source": "La Science et l’Hypothèse — Poincaré"
+  },
+  {
+    "author": "Bernhard Riemann",
+    "quote": "Doğa yasaları matematiğin derinliklerinde saklıdır.",
+    "source": "Habilitasyon Dersi (1854) — Riemann"
+  },
+  {
+    "author": "Leonhard Euler",
+    "quote": "Matematiğin gücü, basitlikten doğar.",
+    "source": "Euler’e atıf — Wikiquote"
+  },
+  {
+    "author": "Joseph Fourier",
+    "quote": "Isı, hareketin evrensel ölçüsüdür.",
+    "source": "Théorie analytique de la chaleur — Fourier"
+  },
+  {
+    "author": "Pierre-Simon Laplace",
+    "quote": "Bana evrenin şu anki durumu ve yasalarını verin; geçmişi ve geleceği hesaplayayım.",
+    "source": "Essai philosophique sur les probabilités — Laplace"
+  },
+  {
+    "author": "Blaise Pascal",
+    "quote": "Kalbin, aklın bilmediği nedenleri vardır.",
+    "source": "Pensées — Pascal"
+  },
+  {
+    "author": "G. H. Hardy",
+    "quote": "Bir matematikçi, kalıcı desenler yapan bir sanatçıdır.",
+    "source": "A Mathematician’s Apology — Hardy"
+  },
+  {
+    "author": "Srinivasa Ramanujan",
+    "quote": "Benim için bir denklem, Tanrı’nın bir düşüncesini ifade etmiyorsa anlamlı değildir.",
+    "source": "Hardy’nin anlatımı — Ramanujan"
+  },
+  {
+    "author": "Alan Turing",
+    "quote": "Yalnızca kısa bir mesafeyi görebiliriz; ama orada yapılacak çok iş var.",
+    "source": "Computing Machinery and Intelligence — Turing"
+  },
+  {
+    "author": "Claude Shannon",
+    "quote": "İletişimde temel sorun, bir noktada seçilen mesajın başka bir noktada yeniden üretilmesidir.",
+    "source": "A Mathematical Theory of Communication — Shannon"
+  },
+  {
+    "author": "John von Neumann",
+    "quote": "Matematikte şeyleri anlamazsınız; onlara yalnızca alışırsınız.",
+    "source": "Von Neumann’a atıf — Wikiquote"
+  },
+  {
+    "author": "Paul Dirac",
+    "quote": "Fizikte güzellik, doğruluğun işaretidir.",
+    "source": "Dirac’a atıf — Wikiquote"
+  },
+  {
+    "author": "Erwin Schrödinger",
+    "quote": "Yaşam, fizik ve kimyanın istatistiksel yasalarıyla açıklanır.",
+    "source": "What Is Life? — Schrödinger"
+  },
+  {
+    "author": "Werner Heisenberg",
+    "quote": "Gözlemlediğimiz doğanın kendisi değil; sorularımıza verdiği yanıtlardır.",
+    "source": "Physics and Philosophy — Heisenberg"
+  },
+  {
+    "author": "Niels Bohr",
+    "quote": "Bir uzman, dar bir alanda yapılabilecek tüm hataları yapmış kişidir.",
+    "source": "Bohr’a atıf — Wikiquote"
+  },
+  {
+    "author": "Max Planck",
+    "quote": "Yeni bir bilimsel gerçek, genellikle muhaliflerini ikna ederek değil; onların zamanla yok olmasıyla kabul görür.",
+    "source": "Scientific Autobiography — Planck"
+  },
+  {
+    "author": "Wolfgang Pauli",
+    "quote": "Bu doğru değil; hatta yanlış bile değil.",
+    "source": "Pauli’ye atıf — Wikiquote"
+  },
+  {
+    "author": "Enrico Fermi",
+    "quote": "Bilim, düzenlenmiş meraktır.",
+    "source": "Fermi’ye atıf — Wikiquote"
+  },
+  {
+    "author": "Richard Feynman",
+    "quote": "İlk ilke, kendinizi kandırmamanız gerektiğidir; kandırılması en kolay kişi kendinizsinizdir.",
+    "source": "Caltech 1974 konuşması — Feynman"
+  },
+  {
+    "author": "Murray Gell-Mann",
+    "quote": "Güzellik, teorinin pusulasıdır.",
+    "source": "Gell-Mann’a atıf — Wikiquote"
+  },
+  {
+    "author": "Steven Weinberg",
+    "quote": "Evren anlaşılır göründükçe, daha da amaçsız görünüyor.",
+    "source": "The First Three Minutes — Weinberg"
+  },
+  {
+    "author": "Subrahmanyan Chandrasekhar",
+    "quote": "Bilimsel keşfin yolu uzun bir sabırdır.",
+    "source": "Chandrasekhar’a atıf — Wikiquote"
+  },
+  {
+    "author": "Abdus Salam",
+    "quote": "Bilim, insanlığın ortak dilidir.",
+    "source": "Salam’a atıf — Wikiquote"
+  },
+  {
+    "author": "Vera Rubin",
+    "quote": "Bilimde çözülemez sorun yoktur; yeterince iyi ölçmediğimiz sorunlar vardır.",
+    "source": "Rubin’e atıf — Wikiquote"
+  },
+  {
+    "author": "Edwin Hubble",
+    "quote": "Evrende galaksiler vardır—ve biz onlardan birindeyiz.",
+    "source": "Hubble’a atıf — Wikiquote"
+  },
+  {
+    "author": "Antoine Lavoisier",
+    "quote": "Hiçbir şey yoktan var olmaz, vardan yok olmaz; yalnızca dönüşür.",
+    "source": "Traité Élémentaire de Chimie — Lavoisier"
+  },
+  {
+    "author": "Robert Boyle",
+    "quote": "Deney, doğanın lehçesini öğretir.",
+    "source": "Boyle’a atıf — Wikiquote"
+  },
+  {
+    "author": "Michael Faraday",
+    "quote": "Gerçek olmak için hiçbir şey fazla harika değildir.",
+    "source": "Faraday’a atıf — Wikiquote"
+  },
+  {
+    "author": "James Clerk Maxwell",
+    "quote": "Bilincinde olunan cehalet, gerçek ilerlemenin başlangıcıdır.",
+    "source": "Maxwell’e atıf — Wikiquote"
+  },
+  {
+    "author": "Dmitri Mendeleyev",
+    "quote": "Elementlerin düzeni, doğanın şiiridir.",
+    "source": "Mendeleyev’e atıf — Wikiquote"
+  },
+  {
+    "author": "Rosalind Franklin",
+    "quote": "Bilim, gerçeğe bağlılıktır; kişisel hırs değil.",
+    "source": "Franklin’e atıf — Wikiquote"
+  },
+  {
+    "author": "Francis Crick",
+    "quote": "Bilimde, ‘bu nasıl olabilir?’ sorusu her kapıyı açar.",
+    "source": "Crick’e atıf — Wikiquote"
+  },
+  {
+    "author": "James D. Watson",
+    "quote": "DNA, hayatın bilgisini taşır.",
+    "source": "Watson’a atıf — Wikiquote"
+  },
+  {
+    "author": "Gregor Mendel",
+    "quote": "Doğadaki düzen, küçük tohumlarda saklıdır.",
+    "source": "Mendel’e atıf — Wikiquote"
+  },
+  {
+    "author": "Barbara McClintock",
+    "quote": "Doğayı dinlerseniz, size gerçeği fısıldar.",
+    "source": "McClintock’a atıf — Wikiquote"
+  },
+  {
+    "author": "Alexander Fleming",
+    "quote": "Bazen tesadüf, hazır bir zihni ödüllendirir.",
+    "source": "Fleming’e atıf — Wikiquote"
+  },
+  {
+    "author": "Louis Pasteur",
+    "quote": "Şans, hazırlıklı zihinleri sever.",
+    "source": "Pasteur’e atıf — Wikiquote"
+  },
+  {
+    "author": "Jonas Salk",
+    "quote": "Umut, geleceğin aşısıdır.",
+    "source": "Salk’a atıf — Wikiquote"
+  },
+  {
+    "author": "Edward Jenner",
+    "quote": "İnsanlığın sağlığı, cesur denemeleri bekler.",
+    "source": "Jenner’a atıf — Wikiquote"
+  },
+  {
+    "author": "Ignaz Semmelweis",
+    "quote": "Temizlik, hayat kurtarır.",
+    "source": "Semmelweis’e atıf — Wikiquote"
+  },
+  {
+    "author": "John Snow",
+    "quote": "Kanıt, pompa kolunu indirir.",
+    "source": "1854 Londra kolera vakası — Snow"
+  },
+  {
+    "author": "Florence Nightingale",
+    "quote": "Tanrı’nın düşüncelerini anlamak istiyorsak istatistiği çalışmalıyız.",
+    "source": "Nightingale’e atıf — Wikiquote"
+  },
+  {
+    "author": "George E. P. Box",
+    "quote": "Tüm modeller yanlıştır, ama bazıları yararlıdır.",
+    "source": "Box — Empirical Model-Building and Response Surfaces"
+  },
+  {
+    "author": "R. A. Fisher",
+    "quote": "Deney bittikten sonra istatistikçiye danışmak, otopsi istemeye benzer.",
+    "source": "The Design of Experiments — Fisher"
+  },
+  {
+    "author": "John Tukey",
+    "quote": "Doğru soruya yaklaşık bir cevap, yanlış soruya kesin bir cevaptan daha iyidir.",
+    "source": "Tukey’e atıf — Wikiquote"
+  },
+  {
+    "author": "Theodosius Dobzhansky",
+    "quote": "Evrim ışığı olmadan biyolojide hiçbir şey anlamlı değildir.",
+    "source": "Nothing in Biology Makes Sense... — Dobzhansky"
+  },
+  {
+    "author": "Jacques Monod",
+    "quote": "Bilim, yanlışlanabilir hipotezlerin sanatıdır.",
+    "source": "Monod’a atıf — Wikiquote"
+  },
+  {
+    "author": "Konrad Lorenz",
+    "quote": "Her davranışın bir tarihi vardır.",
+    "source": "Lorenz’e atıf — Wikiquote"
+  },
+  {
+    "author": "Niko Tinbergen",
+    "quote": "Dört ‘neden’i sormadan bir davranışı anlayamazsın.",
+    "source": "Tinbergen’e atıf — Wikiquote"
+  },
+  {
+    "author": "Rachel Carson",
+    "quote": "Doğa, sessizce uyarır; dinlemeyi bilmek gerekir.",
+    "source": "Silent Spring — Carson"
+  },
+  {
+    "author": "Jane Goodall",
+    "quote": "Yaptıklarımız bir fark yaratır; hangi farkı yaratacağımıza biz karar veririz.",
+    "source": "Goodall’a atıf — Wikiquote"
+  },
+  {
+    "author": "E. O. Wilson",
+    "quote": "İnsanlık biyofiliktir.",
+    "source": "Biophilia — Wilson"
+  },
+  {
+    "author": "Stephen Jay Gould",
+    "quote": "Doğa, düz bir merdiven değil; dallanan bir ağaçtır.",
+    "source": "Gould — Wonderful Life"
+  },
+  {
+    "author": "Richard Dawkins",
+    "quote": "Genler bencildir; ama kültür işbirliği kurabilir.",
+    "source": "The Selfish Gene — Dawkins"
+  },
+  {
+    "author": "Nicolaus Copernicus",
+    "quote": "Güneş merkezde durur ve her şey onun etrafında döner.",
+    "source": "De revolutionibus orbium coelestium — Copernicus"
+  },
+  {
+    "author": "Tycho Brahe",
+    "quote": "Bilim, dikkatli ve uzun gözlemin eseridir.",
+    "source": "Brahe’ye atıf — Wikiquote"
+  },
+  {
+    "author": "Johannes Kepler",
+    "quote": "Doğa, Tanrı’nın matematiksel düşüncesidir.",
+    "source": "Kepler’e atıf — Wikiquote"
+  },
+  {
+    "author": "Christiaan Huygens",
+    "quote": "Zaman, sarkaçla ölçülebilir.",
+    "source": "Horologium Oscillatorium — Huygens"
+  },
+  {
+    "author": "Edmond Halley",
+    "quote": "Kuyruklu yıldızlar, göklerin seyyahlarıdır.",
+    "source": "Halley’e atıf — Wikiquote"
+  },
+  {
+    "author": "William Herschel",
+    "quote": "Gökyüzü, hayal gücünün sınırlarını aşar.",
+    "source": "Herschel’e atıf — Wikiquote"
+  },
+  {
+    "author": "Cecilia Payne-Gaposchkin",
+    "quote": "Yıldızlar çoğunlukla hidrojenden oluşur.",
+    "source": "Stellar Atmospheres (1925) — Payne"
+  },
+  {
+    "author": "Annie Jump Cannon",
+    "quote": "Yıldızları sınıflandırmak, evreni okumaktır.",
+    "source": "Cannon’a atıf — Wikiquote"
+  },
+  {
+    "author": "Henrietta Swan Leavitt",
+    "quote": "Sefeitler, kozmik mesafenin mumlarıdır.",
+    "source": "Leavitt’e atıf — Wikiquote"
+  },
+  {
+    "author": "Carl Sagan",
+    "quote": "Olağanüstü iddialar, olağanüstü kanıtlar gerektirir.",
+    "source": "Sagan — Cosmos"
+  },
+  {
+    "author": "Stephen Hawking",
+    "quote": "Yıldızlara bakın, ayaklarınıza değil.",
+    "source": "Hawking’e atıf — Wikiquote"
+  },
+  {
+    "author": "Ada Lovelace",
+    "quote": "Analitik Motor, kendisine verilenleri işler; özgünlük iddiası yoktur.",
+    "source": "Notes — Lovelace"
+  },
+  {
+    "author": "Charles Babbage",
+    "quote": "Yetersiz verilerle yapılan hatalar, hiç veri olmadan yapılanlardan daha azdır.",
+    "source": "Babbage’a atıf — Wikiquote"
+  },
+  {
+    "author": "Grace Hopper",
+    "quote": "İzin istemektense özür dilemek daha kolaydır.",
+    "source": "Hopper’a atıf — Wikiquote"
+  },
+  {
+    "author": "Edsger W. Dijkstra",
+    "quote": "Basitlik, güvenilirliğin ön koşuludur.",
+    "source": "Dijkstra — EWD"
+  },
+  {
+    "author": "Donald E. Knuth",
+    "quote": "Erken optimizasyon, kötülüğün köküdür.",
+    "source": "Knuth — Structured Programming (1974)"
+  },
+  {
+    "author": "Brian W. Kernighan",
+    "quote": "Kodu okuyacaklar, yazandan çok daha fazladır.",
+    "source": "The Elements of Programming Style — Kernighan"
+  },
+  {
+    "author": "Linus Torvalds",
+    "quote": "Laf ucuzdur. Kodu göster.",
+    "source": "Torvalds’a atıf — Linux Kernel M-L"
+  },
+  {
+    "author": "Tim Berners-Lee",
+    "quote": "Web herkes içindir.",
+    "source": "Berners-Lee — Web is for Everyone"
+  },
+  {
+    "author": "Vinton Cerf",
+    "quote": "İnternet herkes içindir ve herkes onu şekillendirir.",
+    "source": "Cerf’e atıf — Wikiquote"
+  },
+  {
+    "author": "Katherine Johnson",
+    "quote": "Matematik her yerdedir; yeter ki bakmasını bilelim.",
+    "source": "Johnson’a atıf — Wikiquote"
+  },
+  {
+    "author": "Arthur C. Clarke",
+    "quote": "Yeterince gelişmiş herhangi bir teknoloji sihirden ayırt edilemez.",
+    "source": "Profiles of the Future — Clarke"
+  },
+  {
+    "author": "W. Edwards Deming",
+    "quote": "Tanrı’ya güveniriz; diğerleri veri getirsin.",
+    "source": "Deming’e atıf — 1986 Mary Walton, The Deming Management Method"
+  },
+  {
+    "author": "Ken Thompson",
+    "quote": "Şüphedeysen kaba kuvvet kullan.",
+    "source": "Communications of the ACM (1984) — Thompson"
+  },
+  {
+    "author": "John McCarthy",
+    "quote": "Aritmetik yapmayı reddeden, saçma sapan konuşmaya mahkûmdur.",
+    "source": "McCarthy’ye atıf — Wikiquote"
+  },
+  {
+    "author": "Edsger W. Dijkstra",
+    "quote": "Program testleri hataların varlığını gösterebilir, yokluğunu asla.",
+    "source": "EWD249 (1970) — Dijkstra"
+  },
+  {
+    "author": "Donald E. Knuth",
+    "quote": "Yukarıdaki kodda hatalara karşı dikkatli olun; doğruluğunu kanıtladım ama denemedim.",
+    "source": "Knuth’un 1977 notu"
+  },
+  {
+    "author": "George Pólya",
+    "quote": "Bir problemi çözemiyorsanız, önce çözebileceğiniz daha kolay bir problem bulun.",
+    "source": "How to Solve It — Pólya"
+  },
+  {
+    "author": "Georg Cantor",
+    "quote": "Matematiğin özü, özgürlüğündedir.",
+    "source": "Cantor’a atıf — Grundlagen (1883)"
+  },
+  {
+    "author": "Peter Medawar",
+    "quote": "Bilim, çözülebilir olanın sanatıdır.",
+    "source": "The Art of the Soluble — Medawar"
+  },
+  {
+    "author": "J. B. S. Haldane",
+    "quote": "Evren, sandığımızdan değil; sanabileceğimizden de gariptir.",
+    "source": "Possible Worlds — Haldane"
+  },
+  {
+    "author": "Ernest Rutherford",
+    "quote": "Bütün bilim ya fiziktir ya da pul koleksiyonculuğu.",
+    "source": "Rutherford’a atıf — J. B. Birks, Rutherford at Manchester (1962)"
+  },
+  {
+    "author": "J. Robert Oppenheimer",
+    "quote": "Ben şimdi Ölüm oldum, dünyaların yok edicisi.",
+    "source": "1965 belgesel röportajında Bhagavad Gita’dan — Oppenheimer"
+  },
+  {
+    "author": "Albert Szent-Györgyi",
+    "quote": "Keşif, herkesin gördüğünü görüp kimsenin düşünmediğini düşünmektir.",
+    "source": "Irving Good (ed.), The Scientist Speculates (1962)"
+  },
+  {
+    "author": "Lord Kelvin",
+    "quote": "Konuştuğunuz şeyi ölçebildiğiniz ve sayılarla ifade edebildiğiniz zaman onu biliyorsunuz.",
+    "source": "Popular Lectures and Addresses (1883) — Kelvin"
+  },
+  {
+    "author": "Heike Kamerlingh Onnes",
+    "quote": "Ölçerek bilmeye: ‘Door meten tot weten’.",
+    "source": "Inaugural Lecture (1882) — Onnes"
+  },
+  {
+    "author": "Maria Mitchell",
+    "quote": "Zihin, çevremizdeki bilgiyi ister; gördükçe daha çok görmeye muktedir oluruz.",
+    "source": "Maria Mitchell’e atıf — Works and Days"
+  },
+  {
+    "author": "Richard Hamming",
+    "quote": "Hesaplamanın amacı sayı değil, içgörüdür.",
+    "source": "Hamming (1962) — Numerical Methods"
+  },
+  {
+    "author": "Alan Kay",
+    "quote": "Geleceği tahmin etmenin en iyi yolu onu icat etmektir.",
+    "source": "Alan Kay’a atıf — 1980’ler"
+  },
+  {
+    "author": "Hedy Lamarr",
+    "quote": "İnsanların beyinleri, görünümlerinden daha ilginçtir.",
+    "source": "1990 Forbes röportajı — Lamarr"
+  },
+  {
+    "author": "Arthur Eddington",
+    "quote": "İspat, saf matematikçinin önünde kendini işkence ettiği puttur.",
+    "source": "The Nature of the Physical World (1930) — Eddington"
+  }
+]
