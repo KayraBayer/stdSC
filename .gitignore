@@ -1,0 +1,25 @@
+# Node / Paket
+node_modules/
+npm-debug.log*
+yarn-error.log*
+pnpm-lock.yaml
+
+# Build çıktıları
+dist/
+build/
+coverage/
+
+# Ortam dosyaları
+.env
+.env.*
+!.env.example   # (örnek bırakmak istersen)
+
+# Editör / OS
+.DS_Store
+*.swp
+.vscode/
+.idea/
+
+# Test/Temp
+.tmp/
+.eslintcache
