@@ -5,7 +5,7 @@ import Index from "./pages";
 
 export default function App(): React.ReactElement {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <main className="min-h-screen bg-[#0d0d0d]">
         <Suspense fallback={null}>
           <Routes>

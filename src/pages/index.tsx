@@ -375,10 +375,14 @@ export default function Index(): React.ReactElement {
         setIsLoadingQuote(true);
         setQuoteError(null);
 
-        const res = await fetch("/stdSC/sozler.json", { cache: "no-store" });
+        const url = `${import.meta.env.BASE_URL}sozler.json`; // hem local hem GitHub Pages'te doğru çalışır
+        const res = await fetch(url, { cache: "no-store" });
         if (!res.ok) throw new Error(`sozler.json yüklenemedi (HTTP ${res.status})`);
+
         const all: QuoteItem[] = await res.json();
-        if (!Array.isArray(all) || all.length === 0) throw new Error("sozler.json boş veya hatalı.");
+        if (!Array.isArray(all) || all.length === 0) {
+          throw new Error("sozler.json boş veya hatalı.");
+        }
 
         const todaySerial = serialDayInTZ(new Date(), TZ);
         const diff = Math.max(0, todaySerial - ANCHOR_SERIAL); // 16 Eylülden gün farkı
