@@ -21,7 +21,12 @@ import { motion } from "framer-motion";
 type SlideItem = { name: string; link?: string };
 type SlideCategoryBlock = { category: string; slides: SlideItem[] };
 
-type TestItem = { name: string; link?: string; closing: Date | null };
+type TestItem = {
+  name: string;
+  link?: string;
+  closing: Date | null;
+  testmakerLink?: string; // ✅ eklendi
+};
 type TestCategoryBlock = { category: string; tests: TestItem[] };
 
 /* ——— Günün Sözü tipi ——— */
@@ -187,89 +192,26 @@ const CategoryDropdown: React.FC<{
   );
 };
 
-/* ——— Liste bileşenleri ——— */
-const SlideList: React.FC<{ items?: SlideCategoryBlock[] }> = ({ items = [] }) =>
-  items.length ? (
-    <div className="space-y-2">
-      {items.map((cat) => (
-        <CategoryDropdown key={cat.category} title={cat.category} icon={BookOpen} color="indigo" defaultOpen={false}>
-          <ul className="space-y-1.5 text-sm leading-6 text-slate-300">
-            {cat.slides.map((s, idx) => (
-              <li key={idx} className="flex items-center gap-2">
-                <IconBadge color="indigo" className="h-6 w-6">
-                  <FileText className="h-3.5 w-3.5" />
-                </IconBadge>
-                {s.link ? (
-                  <a
-                    href={s.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 underline decoration-indigo-700/40 underline-offset-2 hover:text-indigo-300"
-                  >
-                    {s.name}
-                    <ExternalLink className="h-3.5 w-3.5" />
-                  </a>
-                ) : (
-                  s.name
-                )}
-              </li>
-            ))}
-          </ul>
-        </CategoryDropdown>
-      ))}
-    </div>
-  ) : (
-    <p className="text-xs text-slate-400">Bu sınıf için slayt yok.</p>
-  );
-
-const TestList: React.FC<{ items?: TestCategoryBlock[] }> = ({ items = [] }) =>
-  items.length ? (
-    <div className="space-y-2">
-      {items.map((cat) => (
-        <CategoryDropdown key={cat.category} title={cat.category} icon={SquareLibrary} color="emerald" defaultOpen={false}>
-          <ul className="space-y-1.5 text-sm leading-6 text-slate-300">
-            {cat.tests.map((t, idx) => (
-              <li key={idx} className="flex items-center gap-2">
-                <IconBadge color="emerald" className="h-6 w-6">
-                  <ClipboardList className="h-3.5 w-3.5" />
-                </IconBadge>
-                {t.link ? (
-                  <a
-                    href={t.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 underline decoration-emerald-700/40 underline-offset-2 hover:text-emerald-300"
-                  >
-                    {t.name}
-                    <ExternalLink className="h-3.5 w-3.5" />
-                  </a>
-                ) : (
-                  t.name
-                )}
-              </li>
-            ))}
-          </ul>
-        </CategoryDropdown>
-      ))}
-    </div>
-  ) : (
-    <p className="text-xs text-slate-400">Bu sınıf için test yok.</p>
-  );
-
-/* ——— TR + numeric collator ——— */
+/* ——— Yardımcılar ——— */
 const trNat = new Intl.Collator("tr", { sensitivity: "base", numeric: true });
 const sortTR = (a = "", b = "") => trNat.compare(a, b);
 const normType = (v?: string | null) => String(v ?? "").trim().toLowerCase();
+const TZ = "Europe/Istanbul";
+
+/** Protokolsüz linklere otomatik https:// ekler; boş veya '-' ise null döner */
+const normalizeUrl = (u?: string | null): string | null => {
+  const s = String(u ?? "").trim();
+  if (!s || s === "-") return null;
+  return /^https?:\/\//i.test(s) ? s : `https://${s}`;
+};
 
 /* ——— İstanbul TZ seri gün hesabı ——— */
-const TZ = "Europe/Istanbul";
 const serialDayInTZ = (d: Date, tz: string): number => {
   const parts = new Intl.DateTimeFormat("en-CA", { timeZone: tz, year: "numeric", month: "2-digit", day: "2-digit" })
     .formatToParts(d);
-  const y = Number(parts.find(p => p.type === "year")?.value);
-  const m = Number(parts.find(p => p.type === "month")?.value);
-  const day = Number(parts.find(p => p.type === "day")?.value);
-  // İlgili günün UTC midnight seri günü:
+  const y = Number(parts.find((p) => p.type === "year")?.value);
+  const m = Number(parts.find((p) => p.type === "month")?.value);
+  const day = Number(parts.find((p) => p.type === "day")?.value);
   return Math.floor(Date.UTC(y, m - 1, day) / 86_400_000);
 };
 
@@ -282,7 +224,7 @@ export default function Index(): React.ReactElement {
   const [selectedGrade, setSelectedGrade] = useState<number>(5);
   const [isLoadingData, setIsLoadingData] = useState(false);
 
-  // Günün sözü durumu
+  // Günün sözü
   const [quote, setQuote] = useState<QuoteItem | null>(null);
   const [isLoadingQuote, setIsLoadingQuote] = useState<boolean>(false);
   const [quoteError, setQuoteError] = useState<string | null>(null);
@@ -336,11 +278,19 @@ export default function Index(): React.ReactElement {
               createdAt?: { toDate?: () => Date };
               duration?: number;
               type?: string;
+              testmakerLink?: string;
             };
             if (normType(data.type) !== "test") return [];
             const start = data.createdAt?.toDate?.() ?? null;
             const end = start ? new Date(start.getTime() + (data.duration ?? 0) * 60_000) : null;
-            return [{ name: data.name ?? "Adsız", link: data.link || undefined, closing: end }];
+            return [
+              {
+                name: data.name ?? "Adsız",
+                link: data.link || undefined,
+                closing: end,
+                testmakerLink: data.testmakerLink, // ✅ taşı
+              },
+            ];
           });
         };
 
@@ -375,7 +325,7 @@ export default function Index(): React.ReactElement {
         setIsLoadingQuote(true);
         setQuoteError(null);
 
-        const url = `${import.meta.env.BASE_URL}sozler.json`; // hem local hem GitHub Pages'te doğru çalışır
+        const url = `${import.meta.env.BASE_URL}sozler.json`;
         const res = await fetch(url, { cache: "no-store" });
         if (!res.ok) throw new Error(`sozler.json yüklenemedi (HTTP ${res.status})`);
 
@@ -385,7 +335,7 @@ export default function Index(): React.ReactElement {
         }
 
         const todaySerial = serialDayInTZ(new Date(), TZ);
-        const diff = Math.max(0, todaySerial - ANCHOR_SERIAL); // 16 Eylülden gün farkı
+        const diff = Math.max(0, todaySerial - ANCHOR_SERIAL);
         const idx = diff % all.length;
 
         if (!aborted) setQuote(all[idx]);
@@ -400,23 +350,113 @@ export default function Index(): React.ReactElement {
     };
   }, []);
 
+  /* ——— Liste bileşenleri (render’dan sonra tanımlı kalsın) ——— */
+  const SlideList: React.FC<{ items?: SlideCategoryBlock[] }> = ({ items = [] }) =>
+    items.length ? (
+      <div className="space-y-2">
+        {items.map((cat) => (
+          <CategoryDropdown key={cat.category} title={cat.category} icon={BookOpen} color="indigo" defaultOpen={false}>
+            <ul className="space-y-1.5 text-sm leading-6 text-slate-300">
+              {cat.slides.map((s, idx) => (
+                <li key={idx} className="flex items-center gap-2">
+                  <IconBadge color="indigo" className="h-6 w-6">
+                    <FileText className="h-3.5 w-3.5" />
+                  </IconBadge>
+                  {s.link ? (
+                    <a
+                      href={s.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 underline decoration-indigo-700/40 underline-offset-2 hover:text-indigo-300"
+                    >
+                      {s.name}
+                      <ExternalLink className="h-3.5 w-3.5" />
+                    </a>
+                  ) : (
+                    s.name
+                  )}
+                </li>
+              ))}
+            </ul>
+          </CategoryDropdown>
+        ))}
+      </div>
+    ) : (
+      <p className="text-xs text-slate-400">Bu sınıf için slayt yok.</p>
+    );
+
+  const TestList: React.FC<{ items?: TestCategoryBlock[] }> = ({ items = [] }) =>
+    items.length ? (
+      <div className="space-y-2">
+        {items.map((cat) => (
+          <CategoryDropdown
+            key={cat.category}
+            title={cat.category}
+            icon={SquareLibrary}
+            color="emerald"
+            defaultOpen={false}
+          >
+            <ul className="space-y-2 text-sm leading-6 text-slate-300">
+              {cat.tests.map((t, idx) => {
+                const tmUrl = normalizeUrl(t.testmakerLink);
+                return (
+                  <li key={idx} className="flex items-start gap-2">
+                    <IconBadge color="emerald" className="h-6 w-6">
+                      <ClipboardList className="h-3.5 w-3.5" />
+                    </IconBadge>
+                    <div className="min-w-0">
+                      {/* Üst satır: test adı */}
+                      <div className="leading-6">
+                        {t.link ? (
+                          <a
+                            href={t.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 underline decoration-emerald-700/40 underline-offset-2 hover:text-emerald-300"
+                          >
+                            {t.name}
+                            <ExternalLink className="h-3.5 w-3.5" />
+                          </a>
+                        ) : (
+                          t.name
+                        )}
+                      </div>
+
+                      {/* Alt satır: TestMaker linki (varsa) */}
+                      {tmUrl && (
+                        <div className="mt-1">
+                          <a
+                            href={tmUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 rounded-md bg-emerald-500/10 px-2 py-0.5 text-xs font-medium text-emerald-300 ring-1 ring-emerald-400/20 transition hover:bg-emerald-500/15 hover:text-emerald-200"
+                            title="TestMaker bağlantısını aç"
+                          >
+                            Optik Form
+                            <ExternalLink className="h-3 w-3" />
+                          </a>
+                        </div>
+                      )}
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+          </CategoryDropdown>
+        ))}
+      </div>
+    ) : (
+      <p className="text-xs text-slate-400">Bu sınıf için test yok.</p>
+    );
+
   return (
     <section className="relative min-h-screen bg-neutral-950 px-4 py-6 pb-[calc(88px+env(safe-area-inset-bottom))] text-slate-200">
-      {/* —— ÜST ŞERİT: Logo solda, Günün Sözü sağda (kutu YOK) —— */}
+      {/* —— ÜST ŞERİT: Logo solda, Günün Sözü sağda —— */}
       <div className="mx-auto mb-6 w-full max-w-6xl">
         <div className="flex flex-wrap items-start gap-3 md:gap-6">
-          {/* Logo — sola sabit */}
-          <img
-            src={Logo}
-            alt="Site Logosu"
-            className="h-14 w-auto opacity-90 md:h-21 shrink-0"
-          />
-
-          {/* Günün Sözü — sağda, minimal tasarım */}
+          <img src={Logo} alt="Site Logosu" className="h-14 w-auto opacity-90 md:h-21 shrink-0" />
           <div className="min-w-0 flex-1">
-            <div className="mb-1 text-xs font-semibold uppercase tracking-wide text-indigo-300/80">
-              Günün Sözü
-            </div>
+            <div className="mb-1 text-xs font-semibold uppercase tracking-wide text-indigo-300/80">Günün Sözü</div>
 
             {isLoadingQuote ? (
               <div className="py-2">
@@ -426,7 +466,6 @@ export default function Index(): React.ReactElement {
               <p className="text-sm text-rose-300">{quoteError}</p>
             ) : quote ? (
               <div className="flex items-start gap-3">
-                {/* Sol pastel şerit */}
                 <span className="mt-1 h-8 w-1 rounded-full bg-indigo-400/40 md:h-10" />
                 <div className="min-w-0">
                   <p className="text-[15px] leading-7 text-slate-200">
@@ -464,7 +503,7 @@ export default function Index(): React.ReactElement {
       {/* Masaüstünde iki sütun: Slaytlar & Testler */}
       <div className="mx-auto grid w-full max-w-6xl items-stretch gap-6 md:grid-cols-2">
         {/* SOL: Slaytlar */}
-        <Card className="hidden md:flex md:h-[400px] flex-col p-4">
+        <Card className="hidden md:flex md:h-[450px] flex-col p-4">
           <SectionHeader icon={Presentation} color="indigo">
             Konu Anlatım Slaytları
           </SectionHeader>
@@ -474,7 +513,7 @@ export default function Index(): React.ReactElement {
         </Card>
 
         {/* SAĞ: Testler */}
-        <Card className="hidden md:flex md:h-[400px] flex-col p-4">
+        <Card className="hidden md:flex md:h-[450px] flex-col p-4">
           <SectionHeader icon={Layers} color="emerald">
             Testler
           </SectionHeader>
