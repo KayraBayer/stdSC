@@ -10,6 +10,8 @@ import {
   Presentation,
   Layers,
   ChevronDown,
+  Youtube,
+  FileDown,
 } from "lucide-react";
 import { db } from "../firebaseConfig";
 import Logo from "../assets/logo.png";
@@ -25,7 +27,9 @@ type TestItem = {
   name: string;
   link?: string;
   closing: Date | null;
-  testmakerLink?: string; // ✅ eklendi
+  testmakerLink?: string;
+  ytlink?: string;       // ✅ YouTube çözüm linki
+  pdfsollink?: string;   // ✅ PDF çözüm linki
 };
 type TestCategoryBlock = { category: string; tests: TestItem[] };
 
@@ -279,6 +283,8 @@ export default function Index(): React.ReactElement {
               duration?: number;
               type?: string;
               testmakerLink?: string;
+              ytlink?: string;
+              pdfsollink?: string;
             };
             if (normType(data.type) !== "test") return [];
             const start = data.createdAt?.toDate?.() ?? null;
@@ -288,7 +294,9 @@ export default function Index(): React.ReactElement {
                 name: data.name ?? "Adsız",
                 link: data.link || undefined,
                 closing: end,
-                testmakerLink: data.testmakerLink, // ✅ taşı
+                testmakerLink: data.testmakerLink,
+                ytlink: data.ytlink,
+                pdfsollink: data.pdfsollink,
               },
             ];
           });
@@ -350,7 +358,7 @@ export default function Index(): React.ReactElement {
     };
   }, []);
 
-  /* ——— Liste bileşenleri (render’dan sonra tanımlı kalsın) ——— */
+  /* ——— Liste bileşenleri ——— */
   const SlideList: React.FC<{ items?: SlideCategoryBlock[] }> = ({ items = [] }) =>
     items.length ? (
       <div className="space-y-2">
@@ -399,6 +407,9 @@ export default function Index(): React.ReactElement {
             <ul className="space-y-2 text-sm leading-6 text-slate-300">
               {cat.tests.map((t, idx) => {
                 const tmUrl = normalizeUrl(t.testmakerLink);
+                const ytUrl = normalizeUrl(t.ytlink);
+                const pdfUrl = normalizeUrl(t.pdfsollink);
+
                 return (
                   <li key={idx} className="flex items-start gap-2">
                     <IconBadge color="emerald" className="h-6 w-6">
@@ -422,9 +433,10 @@ export default function Index(): React.ReactElement {
                         )}
                       </div>
 
-                      {/* Alt satır: TestMaker linki (varsa) */}
-                      {tmUrl && (
-                        <div className="mt-1">
+                      {/* Alt satır: rozetler */}
+                      <div className="mt-1 flex flex-wrap items-center gap-2">
+                        {/* Optik Form */}
+                        {tmUrl && (
                           <a
                             href={tmUrl}
                             target="_blank"
@@ -435,8 +447,36 @@ export default function Index(): React.ReactElement {
                             Optik Form
                             <ExternalLink className="h-3 w-3" />
                           </a>
-                        </div>
-                      )}
+                        )}
+
+                        {/* YouTube Çözüm */}
+                        {ytUrl && (
+                          <a
+                            href={ytUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 rounded-md bg-rose-500/10 px-2 py-0.5 text-xs font-medium text-rose-300 ring-1 ring-rose-400/20 transition hover:bg-rose-500/15 hover:text-rose-200"
+                            title="YouTube çözüm videosunu aç"
+                          >
+                            <Youtube className="h-3.5 w-3.5" />
+                            YouTube
+                          </a>
+                        )}
+
+                        {/* PDF Çözüm */}
+                        {pdfUrl && (
+                          <a
+                            href={pdfUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 rounded-md bg-indigo-500/10 px-2 py-0.5 text-xs font-medium text-indigo-300 ring-1 ring-indigo-400/20 transition hover:bg-indigo-500/15 hover:text-indigo-200"
+                            title="PDF çözümü aç/indir"
+                          >
+                            <FileDown className="h-3.5 w-3.5" />
+                            PDF Çözüm
+                          </a>
+                        )}
+                      </div>
                     </div>
                   </li>
                 );
